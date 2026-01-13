@@ -1,0 +1,2873 @@
+{
+    "scenarios": [
+        {
+            "name": "scenario_4uGyVBzeUAyMJNi5J5X4QM",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 4,
+                                "num_abnormal_transactions": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "inventory",
+                                "task_type": "ending_from_flow",
+                                "difficulty": "medium"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Beijing",
+                                    "difficulty": "hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_PU6qzLwW8bgSLgbfU4TWhu",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "general_event_planning",
+                                "task_params": {
+                                    "department": "Engineering",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "plan": {
+                                        "morning": "Riverside Wetland",
+                                        "lunch": "Maple · Hotpot",
+                                        "afternoon": "Stonegate Eco Park"
+                                    },
+                                    "metrics": [
+                                        "interest_score",
+                                        "cost_per_person",
+                                        "total_travel_distance",
+                                        "overall_score"
+                                    ],
+                                    "end_time": "17:30"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "avg_late_early_days",
+                                "task_params": {
+                                    "department": "Sales_2"
+                                },
+                                "difficulty": {
+                                    "level": "L1"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 5,
+                                "num_abnormal_transactions": 0
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Shenzhen",
+                                    "difficulty": "very easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_39T2YWMFh7bxBrcnChfV4x",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "transactions",
+                                "task_type": "tax_fee",
+                                "difficulty": "medium"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T09:30:00",
+                                "meeting_last_time": 0.5,
+                                "task_type": "check_sum",
+                                "task_level": 3
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Chengdu",
+                                    "difficulty": "very easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 5,
+                                "num_abnormal_transactions": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_n6jZiJsj6RUy6dRGXFeNYj",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "cross_depts_top_n",
+                                "task_params": {
+                                    "departments": [
+                                        "Sales_2",
+                                        "Sales_3",
+                                        "Sales_1"
+                                    ],
+                                    "n": 1
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Beijing",
+                                    "difficulty": "medium"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "transactions",
+                                "task_type": "total_from_items",
+                                "difficulty": "medium"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 4,
+                                "num_abnormal_transactions": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_5wewyvXSBCXZEKzZu7CBVw",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "cross_depts_extreme_employee",
+                                "task_params": {
+                                    "departments": [
+                                        "Sales_2",
+                                        "Sales_3"
+                                    ],
+                                    "mode": "bottom"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "department",
+                                "start_time": "2025-10-01T15:00:00",
+                                "last_time": 2.0,
+                                "conflict_nums": 3
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_SZzwi8Hq2tKkstTf6Rpehv",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Master's"
+                                    ],
+                                    [
+                                        "Electrical Engineering"
+                                    ],
+                                    [
+                                        "5 years"
+                                    ],
+                                    [
+                                        "kubernetes",
+                                        "redis"
+                                    ]
+                                ],
+                                "position": [
+                                    "Software Engineer"
+                                ],
+                                "number_of_resumes": 6
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "has_late_or_early",
+                                "task_params": {
+                                    "department": "Product"
+                                },
+                                "difficulty": {
+                                    "level": "L1"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "optimal_event_planning",
+                                "task_params": {
+                                    "department": "Marketing",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "mode": "lowest_cost"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_FJinZdWCoL7dqidbg8UUog",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "web",
+                                "task_type": "rolling_avg",
+                                "difficulty": "medium"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Master's"
+                                    ],
+                                    [
+                                        "Software Engineering"
+                                    ],
+                                    [
+                                        "3 years"
+                                    ],
+                                    [
+                                        "reinforcement learning"
+                                    ]
+                                ],
+                                "position": [
+                                    "Software Engineer"
+                                ],
+                                "number_of_resumes": 12
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_6V3r2x3Sk9Ltraghx4MFFD",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "attendance_statistics",
+                                "task_params": {
+                                    "department": "all"
+                                },
+                                "difficulty": {
+                                    "level": "L4"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Wuhan",
+                                    "difficulty": "very easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_kkwWEECDgjdG5Hj46ocfdf",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 3,
+                                "num_abnormal_transactions": 0
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T09:30:00",
+                                "meeting_last_time": 1.0,
+                                "task_type": "write",
+                                "task_level": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "inventory",
+                                "task_type": "ending_from_flow",
+                                "difficulty": "hard"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_YFgpXtEqhxy94ZHDVNaajm",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 2,
+                                "num_abnormal_transactions": 0
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "general_event_planning",
+                                "task_params": {
+                                    "department": "Product",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "plan": {
+                                        "morning": "Riverside Wetland",
+                                        "lunch": "Maple · Hotpot",
+                                        "afternoon": "Stonegate Eco Park"
+                                    },
+                                    "metrics": [
+                                        "interest_score",
+                                        "cost_per_person",
+                                        "total_travel_distance",
+                                        "overall_score"
+                                    ],
+                                    "end_time": "18:00"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_fooZLfJjaviE2RUkrHBxZ9",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Shenzhen",
+                                    "difficulty": "very hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "cross_depts_top_n",
+                                "task_params": {
+                                    "departments": [
+                                        "Sales_1",
+                                        "Sales_3",
+                                        "Sales_2"
+                                    ],
+                                    "n": 3
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 3,
+                                "num_abnormal_transactions": 0
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "late_early_employee",
+                                "task_params": {
+                                    "mode": "most_early",
+                                    "department": "Engineering"
+                                },
+                                "difficulty": {
+                                    "level": "L4"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "medium"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_Sb8xzETZFearYs2ZbM4H5d",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "sales",
+                                "task_type": "quarter_from_months",
+                                "difficulty": "very_easy"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Shanghai",
+                                    "difficulty": "very easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_94R9kmPXpX2v5kFjqR69Pi",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "optimal_event_planning",
+                                "task_params": {
+                                    "department": "Sales_3",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "mode": "highest_score"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 2,
+                                "num_abnormal_transactions": 0
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "manager",
+                                "start_time": "2025-10-01T15:00:00",
+                                "last_time": 0.5,
+                                "conflict_nums": 3
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T09:30:00",
+                                "meeting_last_time": 1.0,
+                                "task_type": "none",
+                                "task_level": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_Qm45nV2yTGUwiGE75yrbb2",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "late_early_employee",
+                                "task_params": {
+                                    "mode": "least_late",
+                                    "department": "all"
+                                },
+                                "difficulty": {
+                                    "level": "L2"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 3,
+                                "num_abnormal_transactions": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "all_depts_qoq_count",
+                                "task_params": {
+                                    "quarter": 4,
+                                    "direction": "up"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Doctoral"
+                                    ],
+                                    [
+                                        "Electrical Engineering"
+                                    ],
+                                    [
+                                        "1 year"
+                                    ],
+                                    [
+                                        "redis",
+                                        "deep learning"
+                                    ]
+                                ],
+                                "position": [
+                                    "Software Developer"
+                                ],
+                                "number_of_resumes": 12
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "general_event_planning",
+                                "task_params": {
+                                    "department": "Sales_3",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "plan": {
+                                        "morning": "Riverside Wetland",
+                                        "lunch": "Maple · Hotpot",
+                                        "afternoon": "Stonegate Eco Park"
+                                    },
+                                    "metrics": [
+                                        "interest_score",
+                                        "cost_per_person",
+                                        "total_travel_distance",
+                                        "overall_score"
+                                    ],
+                                    "end_time": "18:00"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "department",
+                                "start_time": "2025-10-01T13:00:00",
+                                "last_time": 2.0,
+                                "conflict_nums": 3
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_8sJANUroYH3WfGw8hLeoUP",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Nanjing",
+                                    "difficulty": "hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "dept_person_qoq_count",
+                                "task_params": {
+                                    "department": "Sales_3",
+                                    "quarter": 4,
+                                    "direction": "up"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_bMfQtU2UvrrBZwqLaFp28U",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Shanghai",
+                                    "difficulty": "hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Master's"
+                                    ],
+                                    [
+                                        "Mathematics"
+                                    ],
+                                    [
+                                        "1 year"
+                                    ],
+                                    [
+                                        "python",
+                                        "kubernetes"
+                                    ]
+                                ],
+                                "position": [
+                                    "Algorithm Researcher"
+                                ],
+                                "number_of_resumes": 6
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 5,
+                                "num_abnormal_transactions": 0
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_ioVMxn4dv8UgZB6D4iYa38",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "average_overtime_hours",
+                                "task_params": {
+                                    "department": "Finance"
+                                },
+                                "difficulty": {
+                                    "level": "L2"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Chongqing",
+                                    "difficulty": "very easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "web",
+                                "task_type": "rolling_avg",
+                                "difficulty": "very_easy"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "optimal_event_planning",
+                                "task_params": {
+                                    "department": "Sales_2",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "mode": "lowest_cost"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "medium"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_Ds9k626kXniy2DVBQVRXRN",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "department",
+                                "start_time": "2025-10-01T15:00:00",
+                                "last_time": 1.5,
+                                "conflict_nums": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "optimal_event_planning",
+                                "task_params": {
+                                    "department": "Sales_2",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "mode": "highest_interest"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 2,
+                                "num_abnormal_transactions": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "sales",
+                                "task_type": "quarter_from_months",
+                                "difficulty": "hard"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_F4ZBoSEU7Wd6XuJf77h4n9",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "medium"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "optimal_event_planning",
+                                "task_params": {
+                                    "department": "Sales_3",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "mode": "shortest_distance"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "department",
+                                "start_time": "2025-10-01T13:00:00",
+                                "last_time": 2.0,
+                                "conflict_nums": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 2,
+                                "num_abnormal_transactions": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "total_absence_days",
+                                "task_params": {
+                                    "department": "Sales_1"
+                                },
+                                "difficulty": {
+                                    "level": "L2"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "sales_statistics",
+                                "task_params": {
+                                    "department": "Sales_2"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_CWj27cjZQRiFpf7EQYbkG9",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Master's"
+                                    ],
+                                    [
+                                        "Computer Science"
+                                    ],
+                                    [
+                                        "5 years"
+                                    ],
+                                    [
+                                        "c++"
+                                    ]
+                                ],
+                                "position": [
+                                    "Software Engineer"
+                                ],
+                                "number_of_resumes": 12
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "manager",
+                                "start_time": "2025-10-01T14:30:00",
+                                "last_time": 0.5,
+                                "conflict_nums": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 4,
+                                "num_abnormal_transactions": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Guangzhou",
+                                    "difficulty": "hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_eWq5T5RFxVGQTfp2qhK92X",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Doctoral"
+                                    ],
+                                    [
+                                        "Software Engineering"
+                                    ],
+                                    [
+                                        "5 years"
+                                    ],
+                                    [
+                                        "c++"
+                                    ]
+                                ],
+                                "position": [
+                                    "Algorithm Researcher"
+                                ],
+                                "number_of_resumes": 9
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T09:00:00",
+                                "meeting_last_time": 2.0,
+                                "task_type": "sum",
+                                "task_level": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "medium"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_mYGVJzsE5QtwDmXiYJGhyx",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Doctoral"
+                                    ],
+                                    [
+                                        "Software Engineering"
+                                    ],
+                                    [
+                                        "3 years"
+                                    ],
+                                    [
+                                        "mongodb",
+                                        "deep learning",
+                                        "java"
+                                    ]
+                                ],
+                                "position": [
+                                    "Algorithm Researcher"
+                                ],
+                                "number_of_resumes": 12
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "attendance_statistics",
+                                "task_params": {
+                                    "department": "all"
+                                },
+                                "difficulty": {
+                                    "level": "L2"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T10:00:00",
+                                "meeting_last_time": 2.0,
+                                "task_type": "check_sum",
+                                "task_level": 3
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "transactions",
+                                "task_type": "total_from_items",
+                                "difficulty": "hard"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Beijing",
+                                    "difficulty": "very easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_R4rfnwwmpFu74An2h9fhnF",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "top_sales_employee",
+                                "task_params": {
+                                    "department": "Sales_3"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "total_absence_days",
+                                "task_params": {
+                                    "department": "all"
+                                },
+                                "difficulty": {
+                                    "level": "L1"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T09:00:00",
+                                "meeting_last_time": 1.0,
+                                "task_type": "write",
+                                "task_level": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_cKkgPwtWmz9bhqZGCZPVUq",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 3,
+                                "num_abnormal_transactions": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "sales",
+                                "task_type": "quarter_from_months",
+                                "difficulty": "medium"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "medium"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "department",
+                                "start_time": "2025-10-01T14:30:00",
+                                "last_time": 1.0,
+                                "conflict_nums": 3
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Doctoral"
+                                    ],
+                                    [
+                                        "Computer Science"
+                                    ],
+                                    [
+                                        "5 years"
+                                    ],
+                                    [
+                                        "data analysis",
+                                        "data visualization",
+                                        "java"
+                                    ]
+                                ],
+                                "position": [
+                                    "Software Developer"
+                                ],
+                                "number_of_resumes": 6
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "general_event_planning",
+                                "task_params": {
+                                    "department": "Marketing",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "plan": {
+                                        "morning": "Riverside Wetland",
+                                        "lunch": "Maple · Hotpot",
+                                        "afternoon": "Stonegate Eco Park"
+                                    },
+                                    "metrics": [
+                                        "interest_score",
+                                        "cost_per_person",
+                                        "total_travel_distance",
+                                        "overall_score"
+                                    ],
+                                    "end_time": "17:30"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_fGKBwJf3WRQBcjCTrCMa3t",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T10:00:00",
+                                "meeting_last_time": 1.5,
+                                "task_type": "sum",
+                                "task_level": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "department",
+                                "start_time": "2025-10-01T15:00:00",
+                                "last_time": 2.0,
+                                "conflict_nums": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_Ts2mDynAUNiV8A2iVYaZoU",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "manager",
+                                "start_time": "2025-10-01T13:00:00",
+                                "last_time": 1.5,
+                                "conflict_nums": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T10:00:00",
+                                "meeting_last_time": 2.0,
+                                "task_type": "check_sum",
+                                "task_level": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_kQDRaynjDy6kmNFSVGM9He",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "average_overtime_hours",
+                                "task_params": {
+                                    "department": "Sales_1"
+                                },
+                                "difficulty": {
+                                    "level": "L5"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "manager",
+                                "start_time": "2025-10-01T15:00:00",
+                                "last_time": 1.5,
+                                "conflict_nums": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Chengdu",
+                                    "difficulty": "easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_WzgBrTnxNU8TT6U6TDCQmh",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Chengdu",
+                                    "difficulty": "very easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T10:00:00",
+                                "meeting_last_time": 2.0,
+                                "task_type": "none",
+                                "task_level": 3
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_R2WZX62wvdn48PBHBzrEDZ",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "general_event_planning",
+                                "task_params": {
+                                    "department": "Engineering",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "plan": {
+                                        "morning": "Riverside Wetland",
+                                        "lunch": "Maple · Hotpot",
+                                        "afternoon": "Stonegate Eco Park"
+                                    },
+                                    "metrics": [
+                                        "interest_score",
+                                        "cost_per_person",
+                                        "total_travel_distance",
+                                        "overall_score"
+                                    ],
+                                    "end_time": "17:30"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "transactions",
+                                "task_type": "tax_fee",
+                                "difficulty": "hard"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 3,
+                                "num_abnormal_transactions": 0
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "per_dept_extreme_employee",
+                                "task_params": {
+                                    "departments": [
+                                        "Sales_2",
+                                        "Sales_1"
+                                    ],
+                                    "mode": "top"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_mpGhxiheRhvhynwK7dgkj2",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "has_late_or_early",
+                                "task_params": {
+                                    "department": "Product"
+                                },
+                                "difficulty": {
+                                    "level": "L1"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Doctoral"
+                                    ],
+                                    [
+                                        "Electrical Engineering"
+                                    ],
+                                    [
+                                        "1 year"
+                                    ],
+                                    [
+                                        "deep learning",
+                                        "data visualization",
+                                        "python"
+                                    ]
+                                ],
+                                "position": [
+                                    "Algorithm Researcher"
+                                ],
+                                "number_of_resumes": 9
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "medium"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 3,
+                                "num_abnormal_transactions": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_ZWtgHWSXBrECCNroepbLTL",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "per_dept_top_n",
+                                "task_params": {
+                                    "departments": [
+                                        "Sales_2",
+                                        "Sales_3",
+                                        "Sales_1"
+                                    ],
+                                    "n": 3
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_JzjQBj55QMM7vpReVVe6xZ",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "manager",
+                                "start_time": "2025-10-01T14:30:00",
+                                "last_time": 2.0,
+                                "conflict_nums": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "optimal_event_planning",
+                                "task_params": {
+                                    "department": "Marketing",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "mode": "lowest_cost"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Master's"
+                                    ],
+                                    [
+                                        "Computer Science"
+                                    ],
+                                    [
+                                        "3 years"
+                                    ],
+                                    [
+                                        "reinforcement learning",
+                                        "data visualization",
+                                        "mongodb"
+                                    ]
+                                ],
+                                "position": [
+                                    "Software Engineer"
+                                ],
+                                "number_of_resumes": 6
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T10:00:00",
+                                "meeting_last_time": 1.0,
+                                "task_type": "write",
+                                "task_level": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "finance",
+                                "task_type": "account_balance_from_details",
+                                "difficulty": "medium"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_gs3V6FUUBLAG6DjJcvoB6r",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "XiAn",
+                                    "difficulty": "easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "has_late_or_early",
+                                "task_params": {
+                                    "department": "Sales_3"
+                                },
+                                "difficulty": {
+                                    "level": "L2"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_dUXEs9iWMjwS8eYnTLBwqX",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "cross_depts_top_n",
+                                "task_params": {
+                                    "departments": [
+                                        "Sales_3",
+                                        "Sales_2",
+                                        "Sales_1"
+                                    ],
+                                    "n": 1
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "general_event_planning",
+                                "task_params": {
+                                    "department": "Marketing",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "plan": {
+                                        "morning": "Riverside Wetland",
+                                        "lunch": "Maple · Hotpot",
+                                        "afternoon": "Stonegate Eco Park"
+                                    },
+                                    "metrics": [
+                                        "interest_score",
+                                        "total_travel_distance",
+                                        "cost_per_person"
+                                    ]
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_TQmbaqJy3xG2cXhfFkEvSS",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "dept_person_qoq_count",
+                                "task_params": {
+                                    "department": "Sales_3",
+                                    "quarter": 2,
+                                    "direction": "down"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 3,
+                                "num_abnormal_transactions": 0
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Shenzhen",
+                                    "difficulty": "medium"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T09:00:00",
+                                "meeting_last_time": 2.0,
+                                "task_type": "check_sum",
+                                "task_level": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Doctoral"
+                                    ],
+                                    [
+                                        "Computer Science"
+                                    ],
+                                    [
+                                        "5 years"
+                                    ],
+                                    [
+                                        "data analysis",
+                                        "data visualization"
+                                    ]
+                                ],
+                                "position": [
+                                    "Software Developer"
+                                ],
+                                "number_of_resumes": 9
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_hZ87wV6mvft38FpeF7Hq8X",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "dept_person_qoq_count",
+                                "task_params": {
+                                    "department": "Sales_2",
+                                    "quarter": 3,
+                                    "direction": "up"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "XiAn",
+                                    "difficulty": "hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_fxNMXaj9TpMDSkLeotPxrY",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "web",
+                                "task_type": "rolling_avg",
+                                "difficulty": "easy"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "medium"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "manager",
+                                "start_time": "2025-10-01T15:00:00",
+                                "last_time": 1.0,
+                                "conflict_nums": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "late_early_employee",
+                                "task_params": {
+                                    "mode": "most_early",
+                                    "department": "Human Resources"
+                                },
+                                "difficulty": {
+                                    "level": "L3"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 2,
+                                "num_abnormal_transactions": 0
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_MFe62vi83ZspSintKKaVxx",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Doctoral"
+                                    ],
+                                    [
+                                        "Software Engineering"
+                                    ],
+                                    [
+                                        "5 years"
+                                    ],
+                                    [
+                                        "reinforcement learning",
+                                        "kubernetes",
+                                        "data visualization"
+                                    ]
+                                ],
+                                "position": [
+                                    "Algorithm Researcher"
+                                ],
+                                "number_of_resumes": 12
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T09:00:00",
+                                "meeting_last_time": 1.5,
+                                "task_type": "write",
+                                "task_level": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "general_event_planning",
+                                "task_params": {
+                                    "department": "Engineering",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "plan": {
+                                        "morning": "Riverside Wetland",
+                                        "lunch": "Maple · Hotpot",
+                                        "afternoon": "Stonegate Eco Park"
+                                    },
+                                    "metrics": [
+                                        "total_travel_distance",
+                                        "cost_per_person",
+                                        "interest_score"
+                                    ]
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "average_overtime_hours",
+                                "task_params": {
+                                    "department": "Sales_1"
+                                },
+                                "difficulty": {
+                                    "level": "L5"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_Pn7cYMrnWWGYTUb24b5xwk",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "manager",
+                                "start_time": "2025-10-01T13:00:00",
+                                "last_time": 1.0,
+                                "conflict_nums": 3
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "per_dept_top_n",
+                                "task_params": {
+                                    "departments": [
+                                        "Sales_1",
+                                        "Sales_3"
+                                    ],
+                                    "n": 2
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 4,
+                                "num_abnormal_transactions": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_VecCSunTUcQiZZGUcHLPsh",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 2,
+                                "num_abnormal_transactions": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T09:30:00",
+                                "meeting_last_time": 1.5,
+                                "task_type": "none",
+                                "task_level": 3
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_6Tdm4YntXYissy2RaimGaC",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "employees_with_most_remote_days",
+                                "task_params": {
+                                    "department": "Product"
+                                },
+                                "difficulty": {
+                                    "level": "L4"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_cWbvcm5bVqMda9uQcdN2ya",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "has_late_or_early",
+                                "task_params": {
+                                    "department": "Finance"
+                                },
+                                "difficulty": {
+                                    "level": "L2"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "medium"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "department",
+                                "start_time": "2025-10-01T15:00:00",
+                                "last_time": 2.0,
+                                "conflict_nums": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "general_event_planning",
+                                "task_params": {
+                                    "department": "Engineering",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "metrics": [
+                                        "cost_per_person",
+                                        "interest_score",
+                                        "total_travel_distance"
+                                    ]
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "logistics",
+                                "task_type": "eta_distance_sla",
+                                "difficulty": "very_easy"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Bachelor's"
+                                    ],
+                                    [
+                                        "Mathematics"
+                                    ],
+                                    [
+                                        "1 year"
+                                    ],
+                                    [
+                                        "deep learning",
+                                        "kubernetes"
+                                    ]
+                                ],
+                                "position": [
+                                    "Algorithm Researcher"
+                                ],
+                                "number_of_resumes": 9
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_joPNTbXsYuH8RUUvShwaBB",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "per_dept_avg_sales",
+                                "task_params": {
+                                    "quarter": 2,
+                                    "departments": [
+                                        "Sales_3",
+                                        "Sales_2",
+                                        "Sales_1"
+                                    ]
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Master's"
+                                    ],
+                                    [
+                                        "Data Science"
+                                    ],
+                                    [
+                                        "5 years"
+                                    ],
+                                    [
+                                        "python"
+                                    ]
+                                ],
+                                "position": [
+                                    "Software Engineer"
+                                ],
+                                "number_of_resumes": 12
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "department",
+                                "start_time": "2025-10-01T13:00:00",
+                                "last_time": 1.0,
+                                "conflict_nums": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T09:30:00",
+                                "meeting_last_time": 1.0,
+                                "task_type": "sum",
+                                "task_level": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_4kmtZc7e5NC2iAoTgNDsTG",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "dept_person_qoq_count",
+                                "task_params": {
+                                    "department": "Sales_2",
+                                    "quarter": 4,
+                                    "direction": "up"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "medium"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_Wy97QGcsxsuD5jbd6ZwDmP",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "general_event_planning",
+                                "task_params": {
+                                    "department": "Engineering",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "metrics": [
+                                        "interest_score",
+                                        "total_travel_distance"
+                                    ]
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Data Completion",
+                            "arguments": {
+                                "domain": "finance",
+                                "task_type": "account_balance_from_details",
+                                "difficulty": "hard"
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_MLCZybPApKhgJgFvQW8LBt",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Chengdu",
+                                    "difficulty": "hard"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T10:00:00",
+                                "meeting_last_time": 2.0,
+                                "task_type": "sum",
+                                "task_level": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "per_dept_top_n",
+                                "task_params": {
+                                    "departments": [
+                                        "Sales_2",
+                                        "Sales_1"
+                                    ],
+                                    "n": 3
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "has_late_or_early",
+                                "task_params": {
+                                    "department": "all"
+                                },
+                                "difficulty": {
+                                    "level": "L3"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 2,
+                                "num_abnormal_transactions": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_K4fQyVB5AcKe4XfHEw5zyq",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "employees_with_perfect_attendance",
+                                "task_params": {
+                                    "department": "Finance"
+                                },
+                                "difficulty": {
+                                    "level": "L2"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 3,
+                                "num_abnormal_transactions": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "manager",
+                                "start_time": "2025-10-01T13:00:00",
+                                "last_time": 0.5,
+                                "conflict_nums": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Doctoral"
+                                    ],
+                                    [
+                                        "Electrical Engineering"
+                                    ],
+                                    [
+                                        "3 years"
+                                    ],
+                                    [
+                                        "data analysis"
+                                    ]
+                                ],
+                                "position": [
+                                    "Software Engineer"
+                                ],
+                                "number_of_resumes": 6
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_hvpBgCSK2Gv73Mik8sbjWD",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Master's"
+                                    ],
+                                    [
+                                        "Software Engineering"
+                                    ],
+                                    [
+                                        "3 years"
+                                    ],
+                                    [
+                                        "python",
+                                        "java"
+                                    ]
+                                ],
+                                "position": [
+                                    "Algorithm Researcher"
+                                ],
+                                "number_of_resumes": 9
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Book",
+                            "arguments": {
+                                "task_type": "manager",
+                                "start_time": "2025-10-01T15:00:00",
+                                "last_time": 1.0,
+                                "conflict_nums": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "per_dept_avg_sales",
+                                "task_params": {
+                                    "quarter": 2,
+                                    "departments": [
+                                        "Sales_1",
+                                        "Sales_2"
+                                    ]
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Event Planning",
+                            "arguments": {
+                                "task_type_name": "general_event_planning",
+                                "task_params": {
+                                    "department": "Sales_2",
+                                    "n_loc": 6,
+                                    "n_res": 10,
+                                    "plan": {
+                                        "morning": "Riverside Wetland",
+                                        "lunch": "Maple · Hotpot",
+                                        "afternoon": "Stonegate Eco Park"
+                                    },
+                                    "metrics": [
+                                        "interest_score",
+                                        "cost_per_person",
+                                        "total_travel_distance",
+                                        "overall_score"
+                                    ]
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T10:00:00",
+                                "meeting_last_time": 2.0,
+                                "task_type": "check",
+                                "task_level": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_Z6N6ucWLSkGznkpf8fWnqD",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "Transaction Data Review",
+                            "arguments": {
+                                "num_normal_transactions": 5,
+                                "num_abnormal_transactions": 2
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Website Monitor",
+                            "arguments": null,
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "medium"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Resume Select",
+                            "arguments": {
+                                "requirement": [
+                                    [
+                                        "Bachelor's"
+                                    ],
+                                    [
+                                        "Electrical Engineering"
+                                    ],
+                                    [
+                                        "3 years"
+                                    ],
+                                    [
+                                        "data analysis",
+                                        "reinforcement learning"
+                                    ]
+                                ],
+                                "position": [
+                                    "Algorithm Researcher"
+                                ],
+                                "number_of_resumes": 6
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Sales Analysis",
+                            "arguments": {
+                                "task_type": "top_sales_employee",
+                                "task_params": {
+                                    "department": "Sales_3"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Chengdu",
+                                    "difficulty": "very easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "scenario_cwSFptbSPH36BZdg4C3kjX",
+            "days": [
+                {
+                    "name": "day_1",
+                    "tasks": [
+                        {
+                            "name": "ADs Strategy Plan",
+                            "arguments": {
+                                "task_params": {
+                                    "city": "Shanghai",
+                                    "difficulty": "easy"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Meeting Attend",
+                            "arguments": {
+                                "meeting_start_time": "2025-10-01T10:00:00",
+                                "meeting_last_time": 0.5,
+                                "task_type": "sum",
+                                "task_level": 1
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "KB Link Fix",
+                            "arguments": {
+                                "task_params": {
+                                    "difficulty": "medium"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        },
+                        {
+                            "name": "Attendance Statistics",
+                            "arguments": {
+                                "task_type_name": "attendance_statistics",
+                                "task_params": {
+                                    "department": "all"
+                                },
+                                "difficulty": {
+                                    "level": "L5"
+                                }
+                            },
+                            "deadline": "2025-10-01T20:00:00"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "version": "Ver.1",
+    "datetime": "2026-01-13T17:15:02.782222"
+}

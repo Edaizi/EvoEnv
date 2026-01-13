@@ -1,0 +1,82 @@
+<div id="chat-tab" class="tab-panel active">
+    <div class="chat-layout-single">
+        <div class="tools-column">
+            <div class="column-title">Chat Tools</div>
+
+            <!-- User list panel -->
+            <div class="chat-panel">
+                <div class="chat-panel-header">Person List</div>
+                <div class="chat-panel-body">
+                    <div class="section-block">
+                        <div class="section-header">List all the employees in the company</div>
+                        <button id="btn-list-users" class="btn primary">Refresh persons</button>
+                        <pre id="list-users-output" class="chat-output" aria-label="User list output"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direct message panel -->
+            <div class="chat-panel">
+                <div class="chat-panel-header">Direct Message</div>
+                <div class="chat-panel-body">
+                    <div class="section-block">
+                        <label class="field-label" for="dm-sender">Sender</label>
+                        <input id="dm-sender" class="input" type="text" placeholder="Enter your name" value="{{ agent_name or '' }}" />
+
+                        <label class="field-label" for="dm-receiver">Receiver</label>
+                        <input id="dm-receiver" class="input" type="text" placeholder="Enter receiver name" />
+
+                        <label class="field-label" for="dm-message">Message</label>
+                        <textarea id="dm-message" class="textarea" rows="3" placeholder="Type your message..."></textarea>
+
+                        <button id="btn-send-dm" class="btn primary">Send</button>
+                        <pre id="dm-output" class="chat-output" aria-label="Direct message output"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Create group panel -->
+            <div class="chat-panel">
+                <div class="chat-panel-header">Create Group</div>
+                <div class="chat-panel-body">
+                    <label class="field-label" for="group-creator">Creator</label>
+                    <input id="group-creator" class="input" type="text" placeholder="Enter your name" value="{{ agent_name or '' }}" />
+
+                    <label class="field-label" for="group-members">Members</label>
+                    <textarea id="group-members" class="textarea" rows="2" placeholder="Comma-separated usernames, e.g. alice,bob,charlie"></textarea>
+
+                    <button id="btn-create-group" class="btn primary">Create group</button>
+                    <pre id="create-group-output" class="chat-output" aria-label="Create group output"></pre>
+                </div>
+            </div>
+
+            <!-- Group list panel -->
+            <div class="chat-panel compact-panel">
+                <div class="chat-panel-header">Group List</div>
+                <div class="chat-panel-body">
+                    <div class="section-header">List all the chat groups available</div>
+                    <button id="btn-list-groups" class="btn secondary">Refresh groups</button>
+                    <pre id="list-groups-output" class="chat-output" aria-label="Group list output"></pre>
+                </div>
+            </div>
+
+            <!-- Group chat panel -->
+            <div class="chat-panel">
+                <div class="chat-panel-header">Group Message</div>
+                <div class="chat-panel-body">
+                    <label class="field-label" for="group-sender">Sender</label>
+                    <input id="group-sender" class="input" type="text" placeholder="Enter your name" value="{{ agent_name or '' }}" />
+
+                    <label class="field-label" for="group-id">Group ID</label>
+                    <input id="group-id" class="input" type="text" placeholder="Enter group ID" />
+
+                    <label class="field-label" for="group-message">Message</label>
+                    <textarea id="group-message" class="textarea" rows="3" placeholder="Type your message to the group..."></textarea>
+
+                    <button id="btn-send-group" class="btn primary">Send to group</button>
+                    <pre id="group-output" class="chat-output" aria-label="Group message output"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

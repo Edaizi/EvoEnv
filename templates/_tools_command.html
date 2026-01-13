@@ -1,0 +1,27 @@
+<div id="command-tab" class="tab-panel">
+    <div class="chat-layout-single">
+        <div class="tools-column">
+            <div class="column-title">Command Tools</div>
+
+            <div class="cloud-help">
+                <p>Here, you can run commands in the sandbox using the <code>ExecuteCommand</code> tool.</p>
+                <p>Commands are executed in the task's <code>workspace</code> directory and support common Linux commands, such as:</p>
+                <p><code>ls -al</code>, <code>cat some_file.txt</code>, <code>python script.py</code>, etc.</p>
+                <p style="color:#b91c1c;">Please do not enter malicious or destructive commands. Although the sandbox is isolated, usage guidelines must still be followed.</p>
+            </div>
+
+            <div class="chat-panel">
+                <div class="chat-panel-header">Run Command in Sandbox</div>
+                <div class="chat-panel-body">
+                    <label class="field-label" for="cmd-input">Command</label>
+                    <textarea id="cmd-input" class="textarea" rows="4" placeholder="例如：ls -al"></textarea>
+
+                    <button id="btn-run-cmd" class="btn primary" style="margin-top:8px;">Run</button>
+
+                    <div class="section-header" style="margin-top:10px;">Output</div>
+                    <pre id="cmd-output" class="chat-output" aria-label="Command output"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

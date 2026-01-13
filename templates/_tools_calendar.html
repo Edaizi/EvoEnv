@@ -1,0 +1,90 @@
+<div id="calendar-tab" class="tab-panel">
+    <div class="chat-layout-single">
+        <div class="tools-column">
+            <div class="column-title">Calendar Tools</div>
+
+            <!-- Available Rooms -->
+            <div class="chat-panel">
+                <div class="chat-panel-header">Available Rooms</div>
+                <div class="chat-panel-body">
+                    <label class="field-label" for="cal-start">Start Time (ISO)</label>
+                    <input id="cal-start" class="input" type="text" placeholder="2025-10-20T10:00:00" />
+
+                    <label class="field-label" for="cal-end">End Time (ISO)</label>
+                    <input id="cal-end" class="input" type="text" placeholder="2025-10-20T11:00:00" />
+
+                    <button id="btn-cal-get-rooms" class="btn primary">Get available rooms</button>
+                    <pre id="cal-get-rooms-output" class="chat-output" aria-label="Calendar available rooms output"></pre>
+                </div>
+            </div>
+
+            <!-- Book meeting -->
+            <div class="chat-panel">
+                <div class="chat-panel-header">Book Meeting</div>
+                <div class="chat-panel-body">
+                    <label class="field-label" for="cal-applicant">Applicant</label>
+                    <input id="cal-applicant" class="input" type="text" placeholder="Enter your name" value="{{ agent_name or '' }}" />
+
+                    <label class="field-label" for="cal-attendees">Attendees</label>
+                    <textarea id="cal-attendees" class="textarea" rows="2" placeholder="Comma-separated attendees, e.g. Alice,Bob,Charlie"></textarea>
+
+                    <label class="field-label" for="cal-room">Room Name</label>
+                    <input id="cal-room" class="input" type="text" placeholder="Room_01" />
+
+                    <label class="field-label" for="cal-book-start">Start Time (ISO)</label>
+                    <input id="cal-book-start" class="input" type="text" placeholder="2025-10-20T10:00:00" />
+
+                    <label class="field-label" for="cal-book-end">End Time (ISO)</label>
+                    <input id="cal-book-end" class="input" type="text" placeholder="2025-10-20T11:00:00" />
+
+                    <button id="btn-cal-book" class="btn primary">Book meeting</button>
+                    <pre id="cal-book-output" class="chat-output" aria-label="Calendar book meeting output"></pre>
+                </div>
+            </div>
+
+            <!-- Attend / Cancel meeting -->
+            <div class="chat-panel">
+                <div class="chat-panel-header">Attend / Cancel Meeting</div>
+                <div class="chat-panel-body">
+                    <div class="section-block">
+                        <div class="section-header">Attend Meeting</div>
+                        <label class="field-label" for="cal-attend-name">Your Name</label>
+                        <input id="cal-attend-name" class="input" type="text" placeholder="Enter your name" value="{{ agent_name or '' }}" />
+
+                        <label class="field-label" for="cal-attend-room">Room Name</label>
+                        <input id="cal-attend-room" class="input" type="text" placeholder="Room_01" />
+
+                        <label class="field-label" for="cal-attend-start">Start Time (ISO)</label>
+                        <input id="cal-attend-start" class="input" type="text" placeholder="2025-10-20T10:00:00" />
+
+                        <label class="field-label" for="cal-attend-end">End Time (ISO)</label>
+                        <input id="cal-attend-end" class="input" type="text" placeholder="2025-10-20T11:00:00" />
+
+                        <button id="btn-cal-attend" class="btn primary">Attend meeting</button>
+                        <pre id="cal-attend-output" class="chat-output" aria-label="Calendar attend meeting output"></pre>
+                    </div>
+
+                    <hr class="section-divider" />
+
+                    <div class="section-block">
+                        <div class="section-header">Cancel Meeting</div>
+                        <label class="field-label" for="cal-cancel-applicant">Applicant</label>
+                        <input id="cal-cancel-applicant" class="input" type="text" placeholder="Enter your name" value="{{ agent_name or '' }}" />
+
+                        <label class="field-label" for="cal-cancel-room">Room Name</label>
+                        <input id="cal-cancel-room" class="input" type="text" placeholder="Room_01" />
+
+                        <label class="field-label" for="cal-cancel-start">Start Time (ISO)</label>
+                        <input id="cal-cancel-start" class="input" type="text" placeholder="2025-10-20T10:00:00" />
+
+                        <label class="field-label" for="cal-cancel-end">End Time (ISO)</label>
+                        <input id="cal-cancel-end" class="input" type="text" placeholder="2025-10-20T11:00:00" />
+
+                        <button id="btn-cal-cancel" class="btn secondary">Cancel meeting</button>
+                        <pre id="cal-cancel-output" class="chat-output" aria-label="Calendar cancel meeting output"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div id="website-monitor-tab" class="tab-panel">
+    <div class="chat-layout-single">
+        <div class="chat-panel">
+        <div class="chat-panel-header">Website Monitor Tools</div>
+        <div class="chat-panel-body">
+            <div class="section-block">
+                <div class="section-header">Historical Load Times (GetHistoricalLoadTimes)</div>
+                <label class="field-label" for="wm-hist-window">Time Window (last_7_days / last_24_hours)</label>
+                <input id="wm-hist-window" class="input" type="text" placeholder="last_7_days">
+                <label class="field-label" for="wm-hist-page">Page URL (optional)</label>
+                <input id="wm-hist-page" class="input" type="text" placeholder="e.g. /blog">
+                <button id="btn-wm-historical" class="btn primary" type="button">Query Historical Load Times</button>
+                <pre id="wm-hist-output" class="chat-output" aria-label="Historical load times output"></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section-block">
+                <div class="section-header">Real-time System Health (GetRealTimeSystemHealth)</div>
+                <button id="btn-wm-system-health" class="btn secondary" type="button">Get System Health</button>
+                <pre id="wm-system-health-output" class="chat-output" aria-label="System health output"></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section-block">
+                <div class="section-header">List Monitored Services (ListMonitoredServices)</div>
+                <button id="btn-wm-list-services" class="btn secondary" type="button">List Services</button>
+                <pre id="wm-list-services-output" class="chat-output" aria-label="Monitored services output"></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section-block">
+                <div class="section-header">Performance Summary (GetPerformanceSummary)</div>
+                <label class="field-label" for="wm-perf-window">Time Window (last_24_hours / last_7_days)</label>
+                <input id="wm-perf-window" class="input" type="text" placeholder="last_24_hours">
+                <button id="btn-wm-performance" class="btn primary" type="button">Get Performance Summary</button>
+                <pre id="wm-performance-output" class="chat-output" aria-label="Performance summary output"></pre>
+            </div>
+
+            <hr class="section-divider" />
+
+            <div class="section-block">
+                <div class="section-header">Error Logs (GetErrorLogs)</div>
+                <label class="field-label" for="wm-error-server-id">Server ID</label>
+                <input id="wm-error-server-id" class="input" type="text" placeholder="e.g. WebApp-Prod-01">
+                <label class="field-label" for="wm-error-lines">Lines (default 20)</label>
+                <input id="wm-error-lines" class="input" type="number" min="1" placeholder="20">
+                <button id="btn-wm-error-logs" class="btn primary" type="button">Get Error Logs</button>
+                <pre id="wm-error-output" class="chat-output" aria-label="Error logs output"></pre>
+            </div>
+                </div>
+        </div>
+    </div>
+</div>

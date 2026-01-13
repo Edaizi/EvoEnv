@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Human Interface</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+<div class="page-container">
+    <!-- Left: Task description -->
+    <div class="left-panel three-column-panel">
+        <div class="panel-header">
+            Task Description
+            {% if agent_name %}
+            <span class="agent-name">[agent: {{ agent_name }}]</span>
+            {% endif %}
+        </div>
+        <div class="panel-content">
+            <textarea id="task-markdown-src" style="display:none;">{{ task_description }}</textarea>
+            <div id="task-markdown-view" class="markdown-body task-scroll"></div>
+        </div>
+    </div>
+
+    <!-- Middle: Tools with tabs -->
+    <div class="center-panel three-column-panel center-wide">
+        <div class="panel-header">
+            Tools
+        </div>
+        <div class="panel-content">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-button active" data-tab="chat-tab">Chat Tools</button>
+                <button class="tab-button" data-tab="calendar-tab">Calendar Tools</button>
+                <button class="tab-button" data-tab="cloud-tab">Cloud Disk Tools</button>
+                <button class="tab-button" data-tab="file-view-edit-tab">File View &amp; Edit</button>
+                <button class="tab-button" data-tab="command-tab">Command Tools</button>
+                <button class="tab-button" data-tab="website-monitor-tab">Website Monitor Tools</button>
+            </div>
+
+            <div class="tab-contents">
+                {% include "_tools_chat.html" %}
+                {% include "_tools_calendar.html" %}
+                {% include "_tools_cloud.html" %}
+                {% include "_tools_file_view_edit.html" %}
+                {% include "_tools_command.html" %}
+                {% include "_tools_website_monitor.html" %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Right: Evaluation -->
+    <div class="right-panel three-column-panel">
+        <div class="panel-header">Evaluation</div>
+        <div class="panel-content">
+            <div class="evaluation-panel">
+                <button id="btn-run-evaluate" class="btn primary">Run Evaluation</button>
+                <pre id="evaluation-output" class="chat-output" aria-label="Evaluation output"></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const srcEl = document.getElementById("task-markdown-src");
+        const viewEl = document.getElementById("task-markdown-view");
+        if (srcEl && viewEl) {
+            const rawMd = srcEl.value || "";
+            marked.setOptions({
+                breaks: true,
+                gfm: true
+            });
+            viewEl.innerHTML = marked.parse(rawMd);
+        }
+
+        // Tabs for center tools column
+        const tabButtons = document.querySelectorAll(".tab-button");
+        const tabPanels = document.querySelectorAll(".tab-panel");
+
+        // 初始化：只显示带 active 的面板
+        tabPanels.forEach((p) => {
+            if (p.classList.contains("active")) {
+                p.style.display = "block";
+            } else {
+                p.style.display = "none";
+            }
+        });
+
+        tabButtons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const targetId = btn.getAttribute("data-tab");
+                tabButtons.forEach((b) => b.classList.remove("active"));
+                tabPanels.forEach((p) => {
+                    p.classList.remove("active");
+                    p.style.display = "none";
+                });
+                btn.classList.add("active");
+                const targetPanel = document.getElementById(targetId);
+                if (targetPanel) {
+                    targetPanel.classList.add("active");
+                    targetPanel.style.display = "block";
+                }
+            });
+        });
+
+    async function callApi(path, payload, outputEl) {
+            if (!outputEl) return;
+            outputEl.textContent = "Loading...";
+            try {
+                const res = await fetch(path, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload || {})
+                });
+                const data = await res.json();
+                outputEl.textContent = data.detail ?? JSON.stringify(data, null, 2);
+            } catch (err) {
+                outputEl.textContent = "Error: " + err;
+            }
+        }
+
+        const listUsersBtn = document.getElementById("btn-list-users");
+        const listUsersOut = document.getElementById("list-users-output");
+        if (listUsersBtn && listUsersOut) {
+            listUsersBtn.addEventListener("click", () => {
+                callApi("/api/chat/list-users", {}, listUsersOut);
+            });
+        }
+
+        const listGroupsBtn = document.getElementById("btn-list-groups");
+        const listGroupsOut = document.getElementById("list-groups-output");
+        if (listGroupsBtn && listGroupsOut) {
+            listGroupsBtn.addEventListener("click", () => {
+                callApi("/api/chat/list-groups", {}, listGroupsOut);
+            });
+        }
+
+        const createGroupBtn = document.getElementById("btn-create-group");
+        const groupCreator = document.getElementById("group-creator");
+        const groupMembers = document.getElementById("group-members");
+        const createGroupOut = document.getElementById("create-group-output");
+        if (createGroupBtn && groupCreator && groupMembers && createGroupOut) {
+            createGroupBtn.addEventListener("click", () => {
+                const payload = {
+                    creator: groupCreator.value.trim(),
+                    members: groupMembers.value.trim(),
+                };
+                callApi("/api/chat/create-group", payload, createGroupOut);
+            });
+        }
+
+        const dmBtn = document.getElementById("btn-send-dm");
+        const dmSender = document.getElementById("dm-sender");
+        const dmReceiver = document.getElementById("dm-receiver");
+        const dmMessage = document.getElementById("dm-message");
+        const dmOut = document.getElementById("dm-output");
+        if (dmBtn && dmSender && dmReceiver && dmMessage && dmOut) {
+            dmBtn.addEventListener("click", () => {
+                const payload = {
+                    sender: dmSender.value.trim(),
+                    receiver: dmReceiver.value.trim(),
+                    message: dmMessage.value.trim(),
+                };
+                callApi("/api/chat/send-message", payload, dmOut);
+            });
+        }
+
+        const groupBtn = document.getElementById("btn-send-group");
+        const groupSender = document.getElementById("group-sender");
+        const groupId = document.getElementById("group-id");
+        const groupMessage = document.getElementById("group-message");
+        const groupOut = document.getElementById("group-output");
+        if (groupBtn && groupSender && groupId && groupMessage && groupOut) {
+            groupBtn.addEventListener("click", () => {
+                const payload = {
+                    sender: groupSender.value.trim(),
+                    group_id: groupId.value.trim(),
+                    message: groupMessage.value.trim(),
+                };
+                callApi("/api/chat/send-group-message", payload, groupOut);
+            });
+        }
+
+        // Run evaluation
+        const evalBtn = document.getElementById("btn-run-evaluate");
+        const evalOut = document.getElementById("evaluation-output");
+        if (evalBtn && evalOut) {
+            evalBtn.addEventListener("click", () => {
+                callApi("/api/evaluate", {}, evalOut);
+            });
+        }
+
+        // Calendar: get available rooms
+        const calGetRoomsBtn = document.getElementById("btn-cal-get-rooms");
+        const calStart = document.getElementById("cal-start");
+        const calEnd = document.getElementById("cal-end");
+        const calGetRoomsOut = document.getElementById("cal-get-rooms-output");
+        if (calGetRoomsBtn && calStart && calEnd && calGetRoomsOut) {
+            calGetRoomsBtn.addEventListener("click", () => {
+                const payload = {
+                    start: calStart.value.trim(),
+                    end: calEnd.value.trim(),
+                };
+                callApi("/api/calendar/get-available-rooms", payload, calGetRoomsOut);
+            });
+        }
+
+        // Calendar: book meeting
+        const calBookBtn = document.getElementById("btn-cal-book");
+        const calApplicant = document.getElementById("cal-applicant");
+        const calAttendees = document.getElementById("cal-attendees");
+        const calRoom = document.getElementById("cal-room");
+        const calBookStart = document.getElementById("cal-book-start");
+        const calBookEnd = document.getElementById("cal-book-end");
+        const calBookOut = document.getElementById("cal-book-output");
+        if (calBookBtn && calApplicant && calAttendees && calRoom && calBookStart && calBookEnd && calBookOut) {
+            calBookBtn.addEventListener("click", () => {
+                const payload = {
+                    applicant: calApplicant.value.trim(),
+                    attendees: calAttendees.value.trim(),
+                    room_name: calRoom.value.trim(),
+                    start: calBookStart.value.trim(),
+                    end: calBookEnd.value.trim(),
+                };
+                callApi("/api/calendar/book-meeting", payload, calBookOut);
+            });
+        }
+
+        // Calendar: attend meeting
+        const calAttendBtn = document.getElementById("btn-cal-attend");
+        const calAttendName = document.getElementById("cal-attend-name");
+        const calAttendRoom = document.getElementById("cal-attend-room");
+        const calAttendStart = document.getElementById("cal-attend-start");
+        const calAttendEnd = document.getElementById("cal-attend-end");
+        const calAttendOut = document.getElementById("cal-attend-output");
+        if (calAttendBtn && calAttendName && calAttendRoom && calAttendStart && calAttendEnd && calAttendOut) {
+            calAttendBtn.addEventListener("click", () => {
+                const payload = {
+                    agent_name: calAttendName.value.trim(),
+                    room_name: calAttendRoom.value.trim(),
+                    start: calAttendStart.value.trim(),
+                    end: calAttendEnd.value.trim(),
+                };
+                callApi("/api/calendar/attend-meeting", payload, calAttendOut);
+            });
+        }
+
+        // Calendar: cancel meeting
+        const calCancelBtn = document.getElementById("btn-cal-cancel");
+        const calCancelApplicant = document.getElementById("cal-cancel-applicant");
+        const calCancelRoom = document.getElementById("cal-cancel-room");
+        const calCancelStart = document.getElementById("cal-cancel-start");
+        const calCancelEnd = document.getElementById("cal-cancel-end");
+        const calCancelOut = document.getElementById("cal-cancel-output");
+        if (calCancelBtn && calCancelApplicant && calCancelRoom && calCancelStart && calCancelEnd && calCancelOut) {
+            calCancelBtn.addEventListener("click", () => {
+                const payload = {
+                    applicant: calCancelApplicant.value.trim(),
+                    room_name: calCancelRoom.value.trim(),
+                    start: calCancelStart.value.trim(),
+                    end: calCancelEnd.value.trim(),
+                };
+                callApi("/api/calendar/cancel-meeting", payload, calCancelOut);
+            });
+        }
+
+        // Website Monitor Tools bindings
+        const wmHistBtn = document.getElementById("btn-wm-historical");
+        const wmHistWindow = document.getElementById("wm-hist-window");
+        const wmHistPage = document.getElementById("wm-hist-page");
+        const wmHistOut = document.getElementById("wm-hist-output");
+        if (wmHistBtn && wmHistWindow && wmHistOut) {
+            wmHistBtn.addEventListener("click", () => {
+                const payload = {
+                    time_window: wmHistWindow.value.trim() || "last_7_days",
+                    page_url: wmHistPage && wmHistPage.value ? wmHistPage.value.trim() : null,
+                };
+                callApi("/api/website/historical-load-times", payload, wmHistOut);
+            });
+        }
+
+        const wmHealthBtn = document.getElementById("btn-wm-system-health");
+        const wmHealthOut = document.getElementById("wm-system-health-output");
+        if (wmHealthBtn && wmHealthOut) {
+            wmHealthBtn.addEventListener("click", () => {
+                callApi("/api/website/system-health", {}, wmHealthOut);
+            });
+        }
+
+        const wmListServicesBtn = document.getElementById("btn-wm-list-services");
+        const wmListServicesOut = document.getElementById("wm-list-services-output");
+        if (wmListServicesBtn && wmListServicesOut) {
+            wmListServicesBtn.addEventListener("click", () => {
+                callApi("/api/website/list-services", {}, wmListServicesOut);
+            });
+        }
+
+        const wmPerfBtn = document.getElementById("btn-wm-performance");
+        const wmPerfWindow = document.getElementById("wm-perf-window");
+        const wmPerfOut = document.getElementById("wm-performance-output");
+        if (wmPerfBtn && wmPerfWindow && wmPerfOut) {
+            wmPerfBtn.addEventListener("click", () => {
+                const payload = {
+                    time_window: wmPerfWindow.value.trim() || "last_24_hours",
+                };
+                callApi("/api/website/performance-summary", payload, wmPerfOut);
+            });
+        }
+
+        const wmErrBtn = document.getElementById("btn-wm-error-logs");
+        const wmErrServer = document.getElementById("wm-error-server-id");
+        const wmErrLines = document.getElementById("wm-error-lines");
+        const wmErrOut = document.getElementById("wm-error-output");
+        if (wmErrBtn && wmErrServer && wmErrOut) {
+            wmErrBtn.addEventListener("click", () => {
+                const payload = {
+                    server_id: wmErrServer.value.trim(),
+                    lines: wmErrLines && wmErrLines.value ? parseInt(wmErrLines.value, 10) || 20 : 20,
+                };
+                callApi("/api/website/error-logs", payload, wmErrOut);
+            });
+        }
+
+        // -------- Cloud/Workspace helpers --------
+    const cloudListEl = document.getElementById("cloud-list");
+    const wsListEl = document.getElementById("ws-list");
+    const cloudBreadcrumbEl = document.getElementById("cloud-breadcrumb");
+    const wsBreadcrumbEl = document.getElementById("ws-breadcrumb");
+
+    // File View & Edit elements
+    const fveWsListEl = document.getElementById("fve-ws-list");
+    const fveWsBreadcrumbEl = document.getElementById("fve-ws-breadcrumb");
+    const fveCurrentFileEl = document.getElementById("fve-current-file");
+    const fveNonTextPreview = document.getElementById("fve-non-text-preview");
+    const fveImgPreview = document.getElementById("fve-image-preview");
+    const fveVideoPreview = document.getElementById("fve-video-preview");
+    const fvePdfPreview = document.getElementById("fve-pdf-preview");
+    const fveTextContainer = document.getElementById("fve-text-editor-container");
+    const fveTextEditor = document.getElementById("fve-text-editor");
+    const fveSaveBtn = document.getElementById("fve-save-btn");
+    const fveSaveStatus = document.getElementById("fve-save-status");
+
+    let fveCurrentFilePath = ""; // relative to workspace/
+
+        let currentCloudPath = ""; // relative to cloud_disk/
+        let currentWsPath = "";    // relative to workspace/
+
+        function renderBreadcrumb(el, baseLabel, relPath, onClick) {
+            if (!el) return;
+            const parts = relPath ? relPath.split('/') : [];
+            const segments = [];
+
+            segments.push({ label: baseLabel, path: "" });
+            let acc = [];
+            for (const p of parts) {
+                acc.push(p);
+                segments.push({ label: p, path: acc.join('/') });
+            }
+
+            el.innerHTML = "";
+            segments.forEach((seg, idx) => {
+                const span = document.createElement("span");
+                span.textContent = seg.label;
+                span.className = "breadcrumb-item";
+                span.addEventListener("click", () => onClick(seg.path));
+                el.appendChild(span);
+                if (idx < segments.length - 1) {
+                    const sep = document.createElement("span");
+                    sep.textContent = " / ";
+                    el.appendChild(sep);
+                }
+            });
+        }
+
+    function renderListing(el, entries, onDirClick, onFileClick) {
+            if (!el) return;
+            el.textContent = "";
+            if (!entries || !entries.length) {
+                el.textContent = "<empty>";
+                return;
+            }
+            entries.forEach((ent) => {
+                const line = document.createElement("div");
+                line.className = "file-row";
+
+                const nameSpan = document.createElement("span");
+                nameSpan.textContent = ent.is_dir ? `[DIR] ${ent.name}` : ent.name;
+                nameSpan.className = ent.is_dir ? "file-name dir" : "file-name";
+
+                if (ent.is_dir) {
+                    nameSpan.addEventListener("click", () => onDirClick(ent.path));
+                } else if (onFileClick) {
+                    // For File View & Edit we use onFileClick when provided
+                    nameSpan.style.cursor = "pointer";
+                    nameSpan.addEventListener("click", () => onFileClick(ent.path));
+                }
+
+                line.appendChild(nameSpan);
+
+                if (!ent.is_dir && !onFileClick) {
+                    // Cloud tab: copy button
+                    const btn = document.createElement("button");
+                    btn.textContent = "Copy to workspace";
+                    btn.className = "btn secondary file-action";
+                    btn.addEventListener("click", (ev) => {
+                        ev.stopPropagation();
+                        // Call the dedicated copy handler when available. Fall back
+                        // to the directory click behavior if not present (defensive).
+                        if (typeof copyFileToWorkspace === "function") {
+                            copyFileToWorkspace(ent.path);
+                        } else {
+                            onDirClick(ent.path);
+                        }
+                    });
+                    line.appendChild(btn);
+                }
+
+                el.appendChild(line);
+            });
+        }
+
+        async function refreshCloud(path) {
+            currentCloudPath = path || "";
+            if (cloudListEl) {
+                cloudListEl.textContent = "Loading...";
+            }
+            try {
+                const res = await fetch("/api/cloud/list-cloud", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ path: currentCloudPath }),
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    renderBreadcrumb(
+                        cloudBreadcrumbEl,
+                        "cloud_disk",
+                        data.path || "",
+                        (p) => refreshCloud(p)
+                    );
+                    renderListing(
+                        cloudListEl,
+                        data.entries || [],
+                        (p) => refreshCloud(p),
+                        null
+                    );
+                } else {
+                    if (cloudListEl) cloudListEl.textContent = data.detail || "Error";
+                }
+            } catch (err) {
+                if (cloudListEl) cloudListEl.textContent = "Error: " + err;
+            }
+        }
+
+        async function refreshWorkspace(path) {
+            currentWsPath = path || "";
+            if (wsListEl) {
+                wsListEl.textContent = "Loading...";
+            }
+            try {
+                const res = await fetch("/api/cloud/list-workspace", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ path: currentWsPath }),
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    renderBreadcrumb(
+                        wsBreadcrumbEl,
+                        "workspace",
+                        data.path || "",
+                        (p) => refreshWorkspace(p)
+                    );
+                    renderListing(wsListEl, data.entries || [], (p) => refreshWorkspace(p), null);
+                } else {
+                    if (wsListEl) wsListEl.textContent = data.detail || "Error";
+                }
+            } catch (err) {
+                if (wsListEl) wsListEl.textContent = "Error: " + err;
+            }
+        }
+
+    async function copyFileToWorkspace(srcRelPath) {
+            // Place file under current workspace directory instead of mirroring cloud_disk structure
+            const srcName = srcRelPath.split("/").pop();
+            const dstRelPath = currentWsPath
+                ? currentWsPath + "/" + srcName
+                : srcName;
+            try {
+                const res = await fetch("/api/cloud/copy-to-workspace", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ src_path: srcRelPath, dst_path: dstRelPath }),
+                });
+                const data = await res.json();
+                if (!res.ok) {
+                    alert("Copy failed: " + (data.detail || "Unknown error"));
+                } else {
+                    refreshWorkspace(currentWsPath);
+                }
+            } catch (err) {
+                alert("Copy failed: " + err);
+            }
+        }
+
+        // -------- File View & Edit: workspace browser & preview --------
+
+        async function fveRefreshWorkspace(path) {
+            const targetPath = path || "";
+            if (fveWsListEl) {
+                fveWsListEl.textContent = "Loading...";
+            }
+            try {
+                const res = await fetch("/api/cloud/list-workspace", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ path: targetPath }),
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    renderBreadcrumb(
+                        fveWsBreadcrumbEl,
+                        "workspace",
+                        data.path || "",
+                        (p) => fveRefreshWorkspace(p)
+                    );
+                    renderListing(
+                        fveWsListEl,
+                        data.entries || [],
+                        (p) => fveRefreshWorkspace(p),
+                        (filePath) => fveOpenFile(filePath)
+                    );
+                } else {
+                    if (fveWsListEl) fveWsListEl.textContent = data.detail || "Error";
+                }
+            } catch (err) {
+                if (fveWsListEl) fveWsListEl.textContent = "Error: " + err;
+            }
+        }
+
+        function fveResetPreview() {
+            if (fveNonTextPreview) fveNonTextPreview.style.display = "none";
+            if (fveImgPreview) {
+                fveImgPreview.style.display = "none";
+                fveImgPreview.src = "";
+            }
+            if (fveVideoPreview) {
+                fveVideoPreview.style.display = "none";
+                fveVideoPreview.src = "";
+            }
+            if (fvePdfPreview) {
+                fvePdfPreview.style.display = "none";
+                fvePdfPreview.src = "";
+            }
+            if (fveTextContainer) fveTextContainer.style.display = "none";
+            if (fveCurrentFileEl) fveCurrentFileEl.textContent = "";
+            if (fveSaveStatus) fveSaveStatus.textContent = "";
+        }
+
+        function getFileExt(path) {
+            const idx = path.lastIndexOf(".");
+            return idx >= 0 ? path.slice(idx).toLowerCase() : "";
+        }
+
+        function isTextEditable(ext) {
+            return [".txt", ".md", ".py", ".json", ".yaml", ".yml", ".csv", ".ini", ".cfg", ".toml", ".html", ".css", ".js", ".ts"].includes(ext);
+        }
+
+        function isImageExt(ext) {
+            return [".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp"].includes(ext);
+        }
+
+        function isVideoExt(ext) {
+            return [".mp4", ".webm", ".ogg", ".mov", ".m4v"].includes(ext);
+        }
+
+        function isPdfExt(ext) {
+            return ext === ".pdf";
+        }
+
+        function fveSetCurrentFileLabel(relPath) {
+            if (!fveCurrentFileEl) return;
+            fveCurrentFileEl.textContent = relPath ? `workspace/${relPath}` : "";
+        }
+
+        async function fveOpenFile(relPath) {
+            fveCurrentFilePath = relPath;
+            fveResetPreview();
+            fveSetCurrentFileLabel(relPath);
+
+            const ext = getFileExt(relPath);
+
+            if (isTextEditable(ext)) {
+                try {
+                    const res = await fetch(`/api/file-view/content?path=${encodeURIComponent(relPath)}`);
+                    if (!res.ok) {
+                        if (fveSaveStatus) fveSaveStatus.textContent = `Failed to load file: ${res.status}`;
+                        return;
+                    }
+                    const data = await res.json();
+                    if (fveTextContainer) fveTextContainer.style.display = "block";
+                    if (fveTextEditor) fveTextEditor.value = data.content || "";
+                } catch (err) {
+                    if (fveSaveStatus) fveSaveStatus.textContent = "Error loading file: " + err;
+                }
+                return;
+            }
+
+            const fileUrl = `/api/file-view/raw?path=${encodeURIComponent(relPath)}`;
+            if (isImageExt(ext)) {
+                if (fveNonTextPreview) fveNonTextPreview.style.display = "block";
+                if (fveImgPreview) {
+                    fveImgPreview.style.display = "block";
+                    fveImgPreview.src = fileUrl;
+                }
+            } else if (isVideoExt(ext)) {
+                if (fveNonTextPreview) fveNonTextPreview.style.display = "block";
+                if (fveVideoPreview) {
+                    fveVideoPreview.style.display = "block";
+                    fveVideoPreview.src = fileUrl;
+                }
+            } else if (isPdfExt(ext)) {
+                if (fveNonTextPreview) fveNonTextPreview.style.display = "block";
+                if (fvePdfPreview) {
+                    fvePdfPreview.style.display = "block";
+                    fvePdfPreview.src = fileUrl;
+                }
+            } else {
+                if (fveSaveStatus) fveSaveStatus.textContent = "This file type is not previewable.";
+            }
+        }
+
+        if (fveSaveBtn && fveTextEditor) {
+            fveSaveBtn.addEventListener("click", async () => {
+                if (!fveCurrentFilePath) {
+                    if (fveSaveStatus) fveSaveStatus.textContent = "No file selected.";
+                    return;
+                }
+                if (fveSaveStatus) fveSaveStatus.textContent = "Saving...";
+                try {
+                    const res = await fetch("/api/file-view/save", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ path: fveCurrentFilePath, content: fveTextEditor.value }),
+                    });
+                    const data = await res.json();
+                    if (res.ok) {
+                        if (fveSaveStatus) fveSaveStatus.textContent = data.detail || "Saved.";
+                    } else {
+                        if (fveSaveStatus) fveSaveStatus.textContent = data.detail || "Save failed.";
+                    }
+                } catch (err) {
+                    if (fveSaveStatus) fveSaveStatus.textContent = "Error: " + err;
+                }
+            });
+        }
+
+        // Command Tools: run command in sandbox
+        const cmdInput = document.getElementById("cmd-input");
+        const cmdBtn = document.getElementById("btn-run-cmd");
+        const cmdOut = document.getElementById("cmd-output");
+        if (cmdBtn && cmdInput && cmdOut) {
+            cmdBtn.addEventListener("click", async () => {
+                const command = cmdInput.value.trim();
+                if (!command) {
+                    cmdOut.textContent = "Please input a command first.";
+                    return;
+                }
+                await callApi("/api/command/execute", { command }, cmdOut);
+            });
+        }
+
+        // Initial load
+        refreshCloud("");
+        refreshWorkspace("");
+        fveRefreshWorkspace("");
+    });
+</script>
+</body>
+</html>

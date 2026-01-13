@@ -1,0 +1,42 @@
+================================================================================
+                           PURCHASE APPROVAL FORM
+================================================================================
+
+FORM ID: {approval_form_id}
+
+--------------------------------------------------------------------------------
+SECTION 1: REQUEST DETAILS
+--------------------------------------------------------------------------------
+REQUESTOR NAME:      {requester_name}
+DEPARTMENT:          {requester_department}
+DATE OF REQUEST:     {request_date}
+
+--------------------------------------------------------------------------------
+SECTION 2: SUPPLIER INFORMATION
+--------------------------------------------------------------------------------
+SUPPLIER NAME:       {supplier_company_name}
+SUPPLIER RATING/ID:  {supplier_rating}
+CONTACT PERSON:      {supplier_contact_person}
+PHONE:               {supplier_phone_number}
+
+--------------------------------------------------------------------------------
+SECTION 3: PURCHASE JUSTIFICATION & DETAILS
+--------------------------------------------------------------------------------
+
+ITEMS / SERVICES REQUESTED:
+ITEMS: {supplier_products}
+ESTIMATED COST: {estimated_cost}
+
+--------------------------------------------------------------------------------
+SECTION 4: APPROVAL SIGNATURES
+--------------------------------------------------------------------------------
+
+REQUESTOR:
+Name:      {requester_name}
+Date:      {request_date}
+
+APPROVOR:
+Name:      {approvor_name}
+Date:      {approval_date}
+
+================================================================================

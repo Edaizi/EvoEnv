@@ -1,0 +1,29 @@
+================================================================================
+                                  INVOICE
+================================================================================
+
+INVOICE #: {invoice_number}
+
+ISSUE DATE: {invoice_issue_date}
+
+--------------------------------------------------------------------------------
+FROM:
+    {supplier_company_name}
+    {supplier_address}
+    {supplier_contact_person}
+    {supplier_phone_number}
+    {supplier_email}
+
+BILL TO:
+    KnowledgeX
+    234 st YJ, Chicago
+    Attn: {self_company_contact_person}
+
+--------------------------------------------------------------------------------
+DESCRIPTION OF GOODS / SERVICES
+--------------------------------------------------------------------------------
+
+GOODS / SERVICES: {supplier_products}
+AMOUNT: {amount}
+
+================================================================================
