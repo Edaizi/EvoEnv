@@ -47,9 +47,9 @@ def random_meeting_attend_task(seed: int = 1234):
     random.seed(seed)
     arguments = {
         "meeting_start_time": [
-            datetime.fromisoformat('2025-10-01T09:00:00'),
-            datetime.fromisoformat('2025-10-01T09:30:00'),
-            datetime.fromisoformat('2025-10-01T10:00:00')
+            '2025-10-01T09:00:00',
+            '2025-10-01T09:30:00',
+            '2025-10-01T10:00:00'
         ],
         "meeting_last_time": [0.5, 1.0, 1.5, 2.0],
         "task_type": ['none', 'write', 'sum', 'check', 'check_sum'],
@@ -67,9 +67,9 @@ def random_meeting_book_task(seed: int = 1234):
     arguments = {
         "task_type": ['department', 'manager'],
         "start_time": [
-            datetime.fromisoformat('2025-10-01T13:00:00'),
-            datetime.fromisoformat('2025-10-01T14:30:00'),
-            datetime.fromisoformat('2025-10-01T15:00:00')
+            '2025-10-01T13:00:00',
+            '2025-10-01T14:30:00',
+            '2025-10-01T15:00:00'
         ],
         "last_time": [0.5, 1.0, 1.5, 2.0],
         "conflict_nums": [1, 2, 3]
@@ -105,66 +105,66 @@ TASK_HUB = {
         "generator": AttendanceTaskGenerator,
         "param_func": random_attendance_task,
         "task_name": "Attendance Statistics",
-        "deadline": datetime.fromisoformat('2025-10-01T20:00:00')
+        "deadline": '2025-10-01T20:00:00'
     },
     "Meeting Attend": {
         "generator": MeetingAttendGenerator,
         "param_func": random_meeting_attend_task,
         "task_name": "Meeting Attend",
-        "deadline": datetime.fromisoformat('2025-10-01T20:00:00')
+        "deadline": '2025-10-01T20:00:00'
     },
     "Meeting Book": {
         "generator": MeetingBookGenerator,
         "param_func": random_meeting_book_task,
         "task_name": "Meeting Book",
-        "deadline": datetime.fromisoformat('2025-10-01T20:00:00')
+        "deadline": '2025-10-01T20:00:00'
     },
     "Transaction Data Review": {
         "generator": TransactionGenerator,
         "param_func": random_transaction_task,
         "task_name": "Transaction Data Review",
-        "deadline": datetime.fromisoformat('2025-10-01T20:00:00')
+        "deadline": '2025-10-01T20:00:00'
     },
     "Website Monitor": {
         "generator": WebsiteAnalysisGenerator,
         "param_func": random_website_monitor_task,
         "task_name": "Website Monitor",
-        "deadline": datetime.fromisoformat('2025-10-01T20:00:00')
+        "deadline": '2025-10-01T20:00:00'
     },
     "Data Completion": {
         "generator": DataCompletionGenerator,
         "param_func": random_data_completion_task,
         "task_name": "Data Completion",
-        "deadline": datetime.fromisoformat('2025-10-01T20:00:00')
+        "deadline": '2025-10-01T20:00:00'
     },
     "KB Link Fix": {
         "generator": KbFixTaskGenerator,
         "param_func": random_kb_fix_task,
         "task_name": "KB Link Fix",
-        "deadline": datetime.fromisoformat('2025-10-01T20:00:00')
+        "deadline": '2025-10-01T20:00:00'
     },
     "Sales Analysis": {
         "generator": SalesTaskGenerator,
         "param_func": random_sales_task,
         "task_name": "Sales Analysis",
-        "deadline": datetime.fromisoformat('2025-10-01T20:00:00')
+        "deadline": '2025-10-01T20:00:00'
     },
     "ADs Strategy Plan": {
         "generator": AdsStrategyGenerator,
         "param_func": random_ads_strategy_task,
         "task_name": "ADs Strategy Plan",
-        "deadline": datetime.fromisoformat('2025-10-01T20:00:00')
+        "deadline": '2025-10-01T20:00:00'
     },
     "Resume Select": {
         "generator": ResumeSelectGenerator,
         "param_func": random_resume_select_task,
         "task_name": "Resume Select",
-        "deadline": datetime.fromisoformat('2025-10-01T20:00:00')
+        "deadline": '2025-10-01T20:00:00'
     },
     "Event Planning": {
         "generator": EventTaskGenerator,
         "param_func": random_event_planning_task,
         "task_name": "Event Planning",
-        "deadline": datetime.fromisoformat('2025-10-01T20:00:00')
+        "deadline": '2025-10-01T20:00:00'
     }
 }

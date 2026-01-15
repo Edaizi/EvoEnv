@@ -3,6 +3,8 @@
 **TraineeBench** is a dynamic evaluation framework designed to evolve MLLM agent benchmarking from static, laboratory-controlled tests to stochastic, production-oriented workplace scenarios. 
 By simulating a "corporate internship," the benchmark subjects agents to a continuous stream of tasks with shifting priorities and deadlines. Unlike information-complete benchmarks, TraineeBench enforces **partial observability**, requiring agents to proactively explore and uncover latent clues through interaction.
 
+See the full paper at [arXiv](https://arxiv.org/abs/2601.08173)
+
 ### 🌟 Core Innovations
 - **Dynamic Workflows**: Moves beyond static Q&A to simulate real-world task streams with changing requirements.
 - **Partial Observability**: Agents must actively explore the environment to find necessary information.
@@ -66,8 +68,24 @@ uv run run_traineebench.py
 
 ## 🧩 Custom Benchmark
 
-*Instructions for creating custom TraineeBench scenarios via configuration files will be added here.*
+As described in [our paper](https://arxiv.org/abs/2601.08173), TraineeBench can generate an infinite number of task instances using random parameters and can combine tasks. Therefore, you can follow the instructions below to create a completely new `customized_config.json`, generating a large number of custom scenarios. You can use these continuously generated scenarios to train your agent and improve its performance.
 
+You can use the following command to get a random new `customized_config.json`.
+
+```bash
+uv run environments/traineebench/customized_bench_configs.py \
+--config-path environments/traineebench/customized_config.json \
+--scenario-nums 10 \
+--day-nums 2
 ```
 
+The script `customized_bench_configs.py` mentioned above offers limited customization. If you wish to generate config files with greater freedom, please refer to `environments/traineebench/customized_bench_configs.py` and `environments/traineebench/task_hub.py`.
+
+After you generate `customized_config.json`, you can then use `gen_bench_from_config.py` to generate the customized benchmark.
+
+```bash
+uv run environments/traineebench/gen_bench_from_config.py \
+--config-path environments/traineebench/customized_config.json \
+--bench-path benchmarks/customized_bench \
+--npc-model gpt-4o-mini
 ```

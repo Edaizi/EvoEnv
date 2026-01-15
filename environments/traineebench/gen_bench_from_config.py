@@ -110,7 +110,7 @@ if __name__ == '__main__':
         "--config-path",
         type=str,
         required=True,
-        help="Path to the pickled benchmark config file.",
+        help="Path to load the benchmark config file.",
     )
     parser.add_argument(
         "--bench-path",
@@ -118,7 +118,6 @@ if __name__ == '__main__':
         required=True,
         help="Output directory where benchmark data will be generated.",
     )
-
     parser.add_argument(
         "--npc-model",
         type=str,
