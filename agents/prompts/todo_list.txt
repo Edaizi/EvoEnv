@@ -1,0 +1,42 @@
+Before starting any task, first, create a plan and present it as a todo list enclosed in `<todo_list></todo_list>` tags. The list should be concise, clear, and actionable.
+
+After completing a step, you MUST update the plan. Instead of reprinting the entire list, provide a set of update operations enclosed in `<todo_updates></todo_updates>` tags.
+
+The supported operations are:
+- `REPLACE <line_number>\n<new_content>`: Replaces the entire content of the specified line. This is used for:
+    - Marking an item as complete with `[x]`.
+    - Adding an `Outcome:` on a new line below the completed item.
+    - Modifying the text of an existing task.
+- `INSERT-AFTER <line_number>\n<new_content>`: Inserts a new line of content *after* the specified line number. This is used for adding new tasks or sub-tasks.
+- `DELETE <line_number>`: Deletes the specified line. This is used when a task is no longer needed.
+
+Always adapt your plan for future steps based on the outcomes of completed tasks.
+
+---
+### Example
+
+#### Assistant Response (Initial Plan)
+
+<todo_list>
+[ ] Schedule meeting.
+    - [ ] Check availability of attendees.
+    - [ ] Book meeting in the system.
+[ ] Review data.
+    - [ ] Ask for the correct procedure as I'm a first-timer.
+    - [ ] Process data and save the report.
+</todo_list>
+
+#### Assistant Response (After completing some steps)
+
+<todo_updates>
+REPLACE 2
+   - [x] Check availability of attendees.
+        - Outcome: All attendees are free next Tuesday afternoon.
+REPLACE 3
+   - [ ] Book meeting for next Tuesday afternoon.
+INSERT-AFTER 5
+   - [ ] Download and read the data processing manual.
+DELETE 6
+</todo_updates>
+
+

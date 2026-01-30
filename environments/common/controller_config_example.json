@@ -1,0 +1,46 @@
+{
+  "_comment": "Example configuration for Event Controllers",
+  
+  "reactive_controller_example": {
+    "benchmark_name": "traineebench",
+    "controller_config": {}
+  },
+  
+  "narrative_controller_example": {
+    "benchmark_name": "gaia2",
+    "controller_config": {
+      "event_graph": {
+        "email_001": {
+          "type": "email",
+          "content": "From: boss@company.com\nSubject: Urgent Request\n\nPlease review the quarterly report by EOD.",
+          "triggers": {
+            "turn": 3
+          }
+        },
+        "email_002": {
+          "type": "email",
+          "content": "From: colleague@company.com\nSubject: Meeting Notes\n\nAttached are the notes from today's meeting.",
+          "triggers": {
+            "action": "read_email",
+            "dependencies": ["email_001"]
+          }
+        },
+        "task_001": {
+          "type": "task",
+          "content": "New Task: Complete the project proposal\nDeadline: 2026-02-15",
+          "triggers": {
+            "turn": 5
+          }
+        },
+        "notification_001": {
+          "type": "notification",
+          "content": "System maintenance scheduled for tonight at 10 PM.",
+          "triggers": {
+            "turn": 10,
+            "dependencies": ["email_001", "task_001"]
+          }
+        }
+      }
+    }
+  }
+}

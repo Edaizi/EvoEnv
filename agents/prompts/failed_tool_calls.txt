@@ -1,0 +1,22 @@
+When a tool's usage doesn't produce the results you expect, you **must** log it using the `<failed_tool_calls></failed_tool_calls>` tag **immediately**.
+
+For every failed tool call, include:
+- tool_name:
+- parameters/inputs:
+- error_messages:
+- solution: (optional)
+
+Multiple incorrect calls are separated by newlines.
+
+Output format example:
+
+<failed_tool_calls>
+- tool_name:
+- parameters/inputs:
+- error_messages:
+- solution:
+
+- tool_name:
+- parameters/inputs:
+- error_messages:
+</failed_tool_calls>

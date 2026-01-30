@@ -31,6 +31,8 @@ virtual_server/chat_server_config.json
 
 tmp*.py
 
+hfd.sh
+
 test.py
 test.json
 test.md
@@ -43,4 +45,11 @@ task_type_summary.csv
 .venv/
 .python-version
 
-benchmarks/
+
+
+meta-agents-research-environments/
+
+AgentBench/
+
+tmp_docs/
+

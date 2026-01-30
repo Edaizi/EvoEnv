@@ -11,6 +11,7 @@ from tools_parser import ToolManager
 from environments.traineebench.schemas.registry import call_evaluator
 from virtual_server.registry import create_server
 from virtual_server.base_server import BaseServer
+from environments.common import BaseController, ReactiveController, NarrativeController
 
 
 class VirtualClock:
@@ -120,6 +121,12 @@ class Environment:
         self.register_tools(tools_config)
 
         self.total_tool_calls: Dict[str, int] = defaultdict(int)
+        
+        # Initialize Event Controller
+        benchmark_name = config.get('benchmark_name', 'traineebench')
+        controller_config = config.get('controller_config', {})
+        self.event_controller = self._load_controller(benchmark_name, controller_config)
+        logger.info(f"Loaded event controller for benchmark: {benchmark_name}")
 
     def register_tools(self, tools_config: List[Dict]):
         tool_names = []
@@ -165,6 +172,9 @@ class Environment:
             self, agent_name: str, tool_calls: List[Any]
         ) -> List[Dict[str, Any]]:
         execute_results = []
+        last_action = None
+        last_result = None
+        
         if tool_calls:
             tool_call_info = f'[{agent_name}] Tool Calls:\n\n'
             for tc in tool_calls:
@@ -180,6 +190,11 @@ class Environment:
                         tc_result = f'[Error] The following error occurred when you called the tool `{tc.function.name}`: {e.__str__()}.'
                 else:
                     tc_result = f'[Error] There is a problem with the tool parameters you entered. Please make sure you enter the correct parameters in the correct format.'
+                
+                # Track last action for event controller
+                last_action = tc
+                last_result = tc_result
+                
                 tool_call_info += f'ID: {tc.id}\n'
                 tool_call_info += f'Tool Name: {tc.function.name}()\n'
                 tool_call_info += f'Arguments: {tc.function.arguments}\n'
@@ -216,6 +231,16 @@ class Environment:
                 self.total_tool_calls[agent_name] += 1
 
             logger.info(tool_call_info)
+        
+        # Update event controller and get any new story events
+        story_events = self.event_controller.update(
+            agent_action=last_action,
+            action_result=last_result
+        )
+        
+        # Inject story events into the observation
+        if story_events:
+            execute_results.extend(story_events)
 
         if self.clock:
             time_message = f'[System Time] Current time is {self.clock.now_str()}.'
@@ -263,6 +288,27 @@ class Environment:
         }
 
         return output
+    
+    def _load_controller(self, benchmark_name: str, controller_config: Dict) -> BaseController:
+        """
+        Load the appropriate event controller based on benchmark name.
+        
+        Args:
+            benchmark_name: Name of the benchmark (e.g., 'traineebench', 'gaia2')
+            controller_config: Configuration dict for the controller
+            
+        Returns:
+            Instance of the appropriate controller
+        """
+        benchmark_name = benchmark_name.lower()
+        
+        if benchmark_name == 'gaia2':
+            logger.info("Loading NarrativeController for GAIA2")
+            return NarrativeController(controller_config)
+        else:
+            # Default to ReactiveController for TraineeBench and others
+            logger.info(f"Loading ReactiveController for {benchmark_name}")
+            return ReactiveController(controller_config)
     
     def close(self):
         for server in self.servers.values():
